@@ -75,35 +75,35 @@
 
   /* Hover triggers */
   .title-list li:nth-child(1):hover ~ .preview img{
-    content: url('/img/cover_bttc.png');
+    content: url('../img/cover/cover-bttc.png');
     opacity: 1;
     /*transform: translateY(0);*/
   }
 
   .title-list li:nth-child(2):hover ~ .preview img {
-    content: url('/img/cover_mhyp.png');
+    content: url('./img/cover/cover-mhyp.png');
     opacity: 1;
     /*transform: translateY(3.2rem); */
   }
 
   .title-list li:nth-child(3):hover ~ .preview img{
-    content: url('/img/cover_hda.png');
+    content: url('img/cover/cover_hda.png');
     opacity: 1;
     /*transform: translateY(6.4rem);*/
   }
 
   .title-list li:nth-child(4):hover ~ .preview img{
-    content: url('/img/cover_5050.png');
+    content: url('/img/cover/cover_5050.png');
     opacity: 1;
     /*transform: translateY(9.6rem);*/
   }
   .title-list li:nth-child(5):hover ~ .preview img{
-    content: url('/img/cover_jfs.png');
+    content: url('/img/cover/cover_jfs.png');
     opacity: 1;
     /*transform: translateY(12.8rem);*/
   }
   .title-list li:nth-child(6):hover ~ .preview img{
-    content: url('/img/cover_hhdm.png');
+    content: url('/img/cover/cover_hhdm.png');
     opacity: 1;
     /*transform: translateY(16rem);*/
   }

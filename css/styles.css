@@ -87,23 +87,23 @@
   }
 
   .title-list li:nth-child(3):hover ~ .preview img{
-    content: url('img/cover/cover_hda.png');
+    content: url('img/cover/cover-hda.png');
     opacity: 1;
     /*transform: translateY(6.4rem);*/
   }
 
   .title-list li:nth-child(4):hover ~ .preview img{
-    content: url('/img/cover/cover_5050.png');
+    content: url('/img/cover/cover-5050.png');
     opacity: 1;
     /*transform: translateY(9.6rem);*/
   }
   .title-list li:nth-child(5):hover ~ .preview img{
-    content: url('/img/cover/cover_jfs.png');
+    content: url('/img/cover/cover-jfs.png');
     opacity: 1;
     /*transform: translateY(12.8rem);*/
   }
   .title-list li:nth-child(6):hover ~ .preview img{
-    content: url('/img/cover/cover_hhdm.png');
+    content: url('/img/cover/cover-hdm.png');
     opacity: 1;
     /*transform: translateY(16rem);*/
   }

@@ -1,0 +1,112 @@
+
+  
+  .wrapper {
+    position: relative;
+    left:7%;
+    width: 90%;
+    height: 90%;
+    margin: 0;
+
+  }
+
+  .title-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 20%;
+    position: relative;
+    z-index: 2;
+  }
+
+.title-list a {
+  text-decoration: none;  /* Remove default underline */
+  color: inherit;  /* Use the same color as the parent element */
+}
+
+.title-list a:hover {
+    text-decoration: underline;  /* Add underline on hover */
+  }
+  
+  .title-list li {
+    font-size: 8vw;
+
+    
+    margin-bottom: 8%;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    font-weight: bold;
+  }
+
+  .title-list li u{
+    font-size: 10pt;
+  }
+
+  .title-list li:hover {
+    text-decoration: underline;
+    
+  }
+
+  .preview {
+    position: fixed;
+    right:1rem;
+    
+    top:50%;
+    transform: translateY(-50%);
+    
+
+
+
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+
+  }
+
+  .preview img {
+    width: 85vw;
+    
+    max-width:85vw;
+    max-height:90vh;
+    margin:auto;
+
+  }
+
+  /* Hover triggers */
+  .title-list li:nth-child(1):hover ~ .preview img{
+    content: url('/img/cover_bttc.png');
+    opacity: 1;
+    /*transform: translateY(0);*/
+  }
+
+  .title-list li:nth-child(2):hover ~ .preview img {
+    content: url('/img/cover_mhyp.png');
+    opacity: 1;
+    /*transform: translateY(3.2rem); */
+  }
+
+  .title-list li:nth-child(3):hover ~ .preview img{
+    content: url('/img/cover_hda.png');
+    opacity: 1;
+    /*transform: translateY(6.4rem);*/
+  }
+
+  .title-list li:nth-child(4):hover ~ .preview img{
+    content: url('/img/cover_5050.png');
+    opacity: 1;
+    /*transform: translateY(9.6rem);*/
+  }
+  .title-list li:nth-child(5):hover ~ .preview img{
+    content: url('/img/cover_jfs.png');
+    opacity: 1;
+    /*transform: translateY(12.8rem);*/
+  }
+  .title-list li:nth-child(6):hover ~ .preview img{
+    content: url('/img/cover_hhdm.png');
+    opacity: 1;
+    /*transform: translateY(16rem);*/
+  }
+  .title-list li:hover ~ .preview {
+    opacity: 1;
+  }

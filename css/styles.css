@@ -1,22 +1,19 @@
+.wrapper {
+  position: relative;
+  left:3%;
+  width: 90%;
+  height: 90%;
+  margin: 0;
+}
 
-  
-  .wrapper {
-    position: relative;
-    left:7%;
-    width: 90%;
-    height: 90%;
-    margin: 0;
-
-  }
-
-  .title-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-right: 20%;
-    position: relative;
-    z-index: 2;
-  }
+.title-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 20%;
+  position: relative;
+  z-index: 2;
+}
 
 .title-list a {
   text-decoration: none;  /* Remove default underline */
@@ -25,88 +22,85 @@
 
 .title-list a:hover {
     text-decoration: underline;  /* Add underline on hover */
-  }
+}
+
+.title-list li {
+  font-size: 7.5vw;
+
   
-  .title-list li {
-    font-size: 8vw;
+  margin-bottom: 8%;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  font-weight: bold;
+}
 
-    
-    margin-bottom: 8%;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s;
-    font-weight: bold;
-  }
+.title-list li u {
+  font-size: 10pt;
+}
 
-  .title-list li u{
-    font-size: 10pt;
-  }
+.title-list li:hover {
+  text-decoration: underline;
+  
+}
 
-  .title-list li:hover {
-    text-decoration: underline;
-    
-  }
+.preview {
+  position: fixed;
+  right:1rem;
+  
+  top:50%;
+  transform: translateY(-50%);
+  
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 2;
 
-  .preview {
-    position: fixed;
-    right:1rem;
-    
-    top:50%;
-    transform: translateY(-50%);
-    
+}
 
+.preview img {
+  width: 85vw;
+  
+  max-width:85vw;
+  max-height:90vh;
+  margin:auto;
 
+}
 
-    pointer-events: none;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    z-index: 2;
+/* Hover triggers */
+.title-list li:nth-child(1):hover ~ .preview img{
+  content: url('../img/cover/cover-bttc.png');
+  opacity: 1;
+  /*transform: translateY(0);*/
+}
 
-  }
+.title-list li:nth-child(2):hover ~ .preview img {
+  content: url('../img/cover/cover-mhyp.png');
+  opacity: 1;
+  /*transform: translateY(3.2rem); */
+}
 
-  .preview img {
-    width: 85vw;
-    
-    max-width:85vw;
-    max-height:90vh;
-    margin:auto;
+.title-list li:nth-child(3):hover ~ .preview img{
+  content: url('../img/cover/cover-hda.png');
+  opacity: 1;
+  /*transform: translateY(6.4rem);*/
+}
 
-  }
-
-  /* Hover triggers */
-  .title-list li:nth-child(1):hover ~ .preview img{
-    content: url('../img/cover/cover-bttc.png');
-    opacity: 1;
-    /*transform: translateY(0);*/
-  }
-
-  .title-list li:nth-child(2):hover ~ .preview img {
-    content: url('./img/cover/cover-mhyp.png');
-    opacity: 1;
-    /*transform: translateY(3.2rem); */
-  }
-
-  .title-list li:nth-child(3):hover ~ .preview img{
-    content: url('img/cover/cover-hda.png');
-    opacity: 1;
-    /*transform: translateY(6.4rem);*/
-  }
-
-  .title-list li:nth-child(4):hover ~ .preview img{
-    content: url('/img/cover/cover-5050.png');
-    opacity: 1;
-    /*transform: translateY(9.6rem);*/
-  }
-  .title-list li:nth-child(5):hover ~ .preview img{
-    content: url('/img/cover/cover-jfs.png');
-    opacity: 1;
-    /*transform: translateY(12.8rem);*/
-  }
-  .title-list li:nth-child(6):hover ~ .preview img{
-    content: url('/img/cover/cover-hdm.png');
-    opacity: 1;
-    /*transform: translateY(16rem);*/
-  }
-  .title-list li:hover ~ .preview {
-    opacity: 1;
-  }
+.title-list li:nth-child(4):hover ~ .preview img{
+  content: url('../img/cover/cover-5050.png');
+  opacity: 1;
+  /*transform: translateY(9.6rem);*/
+}
+.title-list li:nth-child(5):hover ~ .preview img{
+  content: url('../img/cover/cover-jfs.png');
+  opacity: 1;
+  /*transform: translateY(12.8rem);*/
+}
+.title-list li:nth-child(6):hover ~ .preview img{
+  content: url('../img/cover/cover-hdm.png');
+  opacity: 1;
+  /*transform: translateY(16rem);*/
+}
+.title-list li:hover ~ .preview {
+  opacity: 1;
+}

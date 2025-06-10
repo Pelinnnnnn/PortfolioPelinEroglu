@@ -1,9 +1,12 @@
 .wrapper {
   position: relative;
-  left:3%;
-  width: 90%;
+  padding:15px;
+  width: 80vw;
   height: 90%;
   margin: 0;
+  margin-left: 5%;
+  
+  margin-bottom: 100vh;
 }
 
 .title-list {
@@ -21,13 +24,12 @@
 }
 
 .title-list a:hover {
-    text-decoration: underline;  /* Add underline on hover */
+    text-decoration: none;  /* Add underline on hover */
+    
 }
 
 .title-list li {
-  font-size: 7.5vw;
-
-  
+  font-size: 7vw;
   margin-bottom: 8%;
   cursor: pointer;
   position: relative;
@@ -41,12 +43,17 @@
 
 .title-list li:hover {
   text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: greenyellow;
+  
+  z-index: 10000;
+  
   
 }
 
 .preview {
   position: fixed;
-  right:1rem;
+  right:5rem;
   
   top:50%;
   transform: translateY(-50%);
@@ -67,8 +74,10 @@
 
 }
 
+
+
 /* Hover triggers */
-.title-list li:nth-child(1):hover ~ .preview img{
+.title-list li:nth-child(1):click ~ .preview img{
   content: url('../img/cover/cover-bttc.png');
   opacity: 1;
   /*transform: translateY(0);*/

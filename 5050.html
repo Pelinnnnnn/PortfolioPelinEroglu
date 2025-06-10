@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/mouse.js"></script>
+
+</head>
+<body>
+    <div id="circularcursor"></div>
+    <div class="l-collumn"></div>
+    <div class="r-collumn">
+        <pelin><a href="index.html">PELiN <br>EROĞLU</a> </pelin>
+        <menu><a href="index.html">PROJECTS</a> </menu>
+        <menu><a href="index.html">WORK</a> </menu>
+        <menu><a href="pdf/PelinEroglu_Lebenslauf.pdf">CV</a> </menu>
+        <menu><a href="pdf/Portfolio_Pelin Eroglu.pdf">Download PDF</a></menu>
+    </div>
+    <div class="container" id="imageContainer">
+      <div>
+      <h1>50/50 - <br>COMMONING IM BÖTTGERBLOCK</h1>
+      <h2>Bachelor thesis project<br>
+        In collaboration with Leonard Pöppelmann<br>
+        Supervised by Dr Prof Gabu Heindl and Florine Schüschke (M.A.)
+      </h2>
+      <div class="flex">
+        <div class="textblock">
+          <p>
+            Im Rahmen des Studios „Stadtkonflikte - drei Tiefenbohrungen in Berlin“ untersucht das Projekt Formen des Commoning und deren Verhältnis zu Eigentumsstrukturen anhand des Böttgerblocks in Berlin-Gesundbrunnen.
+            <br>
+            Ausgehend von einer Analyse des Gebiets - unterstützt durch nolliplan-basierte Kartierungen - wurden Widersprüche in der offiziellen Planungspolitik aufgedeckt. Trotz geäußerter Ziele wie Verdrängungsschutz und historischer Aufwertung fördert die derzeitige Strategie Gentrifizierungsprozesse.
+            <br>
+            Als Gegenentwurf schlagen wir vor, 50 % der Fläche zu vergesellschaften, um eine gemeinwohlorientierte Entwicklung zu ermöglichen. Unser Entwurf fokussiert sich auf leistbares Wohnen und öffentliche Mikro-Räume, um die bestehende soziale Struktur zu stärken und lebendige Nachbarschaften zu erhalten.
+          </p>
+        </div>
+        <div class="textblock">
+          <p>
+          Developed within the studio “Urban Conflicts – Three Deep Dives in Berlin”, this project explores commoning practices in relation to property ownership using the Böttgerblock in Berlin-Gesundbrunnen as a case study.
+          <br>
+          Based on spatial analysis methods such as the nolli plan, we examined accessibility, ownership, and usage conflicts in the 6-hectare site, which is characterized by historical buildings, privately owned plots, and long-standing small car repair shops. Although the city sees "development potential" in the area, the official redevelopment plan risks promoting gentrification under the guise of urban renewal.
+          <br>
+          Our critical analysis revealed contradictions in the planning statutes, including the lack of concrete anti-displacement measures, selective historical framing, and a public acquisition strategy that inadvertently increases the value of adjacent private land.
+          <br>
+          As an alternative, we propose a 50% public ownership model to ensure a community-centered development. The design emphasizes affordable housing and small-scale public spaces that preserve the vibrant character of the neighborhood and protect the existing social structure.
+        </p>
+        </div>
+      </div>
+      
+    </div>
+      <img src="" alt="">
+      <div class="hover-zone left-zone" id="leftZone"></div>
+      <div class="hover-zone right-zone" id="rightZone"></div>
+      <div class="custom-cursor" id="customCursor" style="display: none;"></div>
+    </div>
+    
+    
+  
+    <script>
+      const container = document.getElementById('imageContainer');
+      const leftZone = document.getElementById('leftZone');
+      const rightZone = document.getElementById('rightZone');
+      const customCursor = document.getElementById('customCursor');
+      // Beispielbilder (ersetze diese durch deine echten Dateinamen)
+      const imageStack = [
+        'img/5050/5050-nolli.png',
+        'img/5050/5050-lokal.png',
+        'img/5050/5050-iso-flächen.png',
+        'img/5050/cover-5050.png',
+        'img/5050/5050-grundriss.png',
+        'img/5050/5050-pik1.png',
+        'img/5050/5050-pik2.png',
+        'img/5050/5050-pik3.png',
+        'img/5050/5050-schnittBB.png',
+        'img/5050/5050-modellfoto.jpg'
+      ];
+      const addedImages = [];
+
+      let currentIndex = 0;
+      function addImage() {
+        if (currentIndex < imageStack.length) {
+          const img = document.createElement('img');
+          img.src = imageStack[currentIndex];
+          img.style.zIndex = currentIndex + 1;
+          container.appendChild(img);
+          addedImages.push(img);
+          currentIndex++;
+        }
+      }
+
+      
+ // Helper: Remove image
+    function removeImage() {
+      if (addedImages.length > 0) {
+        const last = addedImages.pop();
+        container.removeChild(last);
+        currentIndex--;
+      }
+    }
+    
+
+    // Custom cursor follow
+    container.addEventListener('mousemove', e => {
+      customCursor.style.left = `${e.clientX + 10}px`;
+      customCursor.style.top = `${e.clientY + 10}px`;
+    });
+
+    // LEFT ZONE
+    leftZone.addEventListener('mouseenter', () => {
+      if (addedImages.length == 0) {
+      customCursor.textContent = "'click'";
+      customCursor.style.display = 'block';
+    }else{
+      customCursor.textContent = "'back'";
+      customCursor.style.display = 'block';
+    }
+      
+    });
+
+    leftZone.addEventListener('mouseleave', () => {
+      customCursor.style.display = 'none';
+    });
+
+    leftZone.addEventListener('click', () => {
+      removeImage();
+    });
+
+    // RIGHT ZONE
+    rightZone.addEventListener('mouseenter', () => {
+    if (currentIndex >= imageStack.length) {
+      customCursor.textContent = "'close'";
+    } else if (addedImages.length === 0) {
+      customCursor.textContent = "'click'";
+    } else {
+      customCursor.textContent = "'next'";
+    }
+    customCursor.style.display = 'block';
+  });
+
+    rightZone.addEventListener('mouseleave', () => {
+      customCursor.style.display = 'none';
+    });
+
+      rightZone.addEventListener('click', () => {
+        if (currentIndex >= imageStack.length) {
+          // Alle Bilder entfernen
+          addedImages.forEach(img => container.removeChild(img));
+          addedImages.length = 0;
+          currentIndex = 0;
+        } else {
+          addImage();
+        }
+      });
+    </script>
+
+    
+    <style>
+    
+    .container {
+      position: relative;
+      width: 80vw;
+      height: 100vh;
+      
+      margin-left: 10px;
+      
+    }
+
+    .container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 95%;
+      pointer-events: auto;
+    }
+    .hover-zone {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 100;
+      cursor: none;
+    }
+
+    .left-zone {
+      left: 0;
+    }
+
+    .right-zone {
+      right: 0;
+    }
+
+    .custom-cursor {
+      position: absolute;
+      pointer-events: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      background-color: greenyellow;
+      z-index: 999;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: space-between; /* optional: Platz zwischen den Blöcken */
+      gap: 20px; /* Abstand zwischen den Blöcken */
+      padding: 20px;
+    }
+
+    .textblock {
+      flex: 1; /* beide Blöcke gleich breit */
+      padding: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .flex {
+        flex-direction: column;
+      }
+    }
+
+    h1 {
+      font-size: 7vw;
+      margin-left:30px;
+    }
+    h2 {
+      
+      margin-left:40px;
+    }
+
+    </style>
+</body>
+</html>

@@ -14,24 +14,34 @@ body {
 .l-collumn {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  text-align: center;
 
   display: flex;
   flex-direction: row;
+  writing-mode: vertical-rl;
   /* justify-content:space-between; */
   margin-top: 0;
   
   position: fixed;
   left: 0px;
-  flex-direction:column;
+
   
   /* width: 70px; */
   height: 100vh;
-  width:20px;
+  min-width:20px;
   border-left-style: solid;
   border-right-style: solid;
   border-color: rgb(33, 33, 33);
   
   border-width: 3px; 
+}
+.l-collumn a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.active {
+  background-color: greenyellow;
 }
 
 .r-collumn {
@@ -47,7 +57,7 @@ body {
   right: 0px;
   flex-direction:column;
   
-   
+  
   height: 100vh;
   min-width: 15%;
   border-left-style: solid;
@@ -58,7 +68,7 @@ body {
   
 }
 
-.r-collumn > pelin {
+.pelin {
   color:white;
   background-color: rgb(33, 33, 33);
   font-size: 24pt;
@@ -66,7 +76,7 @@ body {
   margin-bottom: 12px;
 }
 
-.r-collumn > menu {
+.menu {
   color:rgb(33, 33, 33);
   background-color: white;
   border-bottom-style: dotted;
@@ -81,11 +91,11 @@ body {
 }
 
 .r-collumn a {
-  text-decoration: none;  /* Remove default underline */
+  text-decoration: none;
   color: inherit; 
 }
 
-.r-collumn menu:hover {
+.menu:hover {
   
   border-bottom-style:solid;
   

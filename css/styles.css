@@ -77,7 +77,7 @@
 
 
 /* Hover triggers */
-.title-list li:nth-child(1):click ~ .preview img{
+.title-list li:nth-child(1):hover ~ .preview img{
   content: url('../img/cover/cover-bttc.png');
   opacity: 1;
   /*transform: translateY(0);*/

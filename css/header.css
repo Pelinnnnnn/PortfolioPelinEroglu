@@ -43,6 +43,10 @@ body {
 .active {
   background-color: greenyellow;
 }
+.notActive:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
 
 .r-collumn {
   font-family: Arial, Helvetica, sans-serif;
